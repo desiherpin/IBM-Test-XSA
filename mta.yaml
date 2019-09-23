@@ -1,0 +1,37 @@
+ID: TEST_20
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: HDB_20
+   type: hdb
+   path: HDB_20
+   requires:
+    - name: hdi_HDB_20
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name}
+
+
+
+    - name: cross-container-service-1
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: ServiceName_1
+        service: ~{the-service-name}
+                          
+
+
+resources:
+ - name: hdi_HDB_20
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+ - name: cross-container-service-1
+   parameters:
+      service-name: US3J0575-1m9i0aigi0ldlt6u-Practice_folder-hdi_project_hdb
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service
+

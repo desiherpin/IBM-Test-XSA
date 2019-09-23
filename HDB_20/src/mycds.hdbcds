@@ -1,0 +1,24 @@
+context mycds {
+
+    /*@@layout{"layoutInfo":{"x":-608,"y":-83.5}}*/
+    entity Entity_1 {
+        elem_1 : String(10);
+    };
+
+    /*@@layout{"layoutInfo":{"x":-1260,"y":-178.5}}*/
+    entity lfa_1 {
+        MANDT : String(3);
+        LIFNR : String(10);
+        LAND1 : String(3);
+        NAME1 : String(35);
+        NAME2 : String(35);
+        NAME3 : String(35);
+        NAME4 : String(35);
+        ORT01 : String(35);
+        ORT02 : String(35);
+        PFACH : String(10);
+        PSTL2 : String(10);
+        PSTLZ : String(10);
+        REGIO : String(3);
+    };
+};
